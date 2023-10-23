@@ -1,0 +1,19 @@
+.logo-style {
+	width: 40px;
+}
+.logo-section {
+	display: flex;
+	align-items: end;
+	gap: 1rem;
+	cursor: pointer;
+}
+.logo-text {
+	color: rgb(12, 94, 246);
+	font-size: 1.5em;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.cover {
+	margin-bottom: 3rem;
+}
