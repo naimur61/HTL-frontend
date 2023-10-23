@@ -16,7 +16,9 @@ export function FolderNode({ folder }: FolderNodeProps) {
 				<div className="folder-label" onClick={handleToggle}>
 					{folder.children && (
 						// collapse icon
-						<div className={`folder-icon ${expanded ? "expanded" : "collapsed"}`}>{expanded ? "▾" : "‣"}</div>
+						<div className={`collapse-icon ${expanded ? "expanded" : "collapsed"}`}>
+							{expanded ? "▾" : "‣"}
+						</div>
 					)}
 					{/* File Icon  */}
 					<FcOpenedFolder />
