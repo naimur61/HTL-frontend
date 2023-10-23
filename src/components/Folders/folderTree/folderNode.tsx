@@ -26,8 +26,11 @@ export function FolderNode({ folder }: FolderNodeProps) {
 					<div>{folder.label}</div>
 				</div>
 				{/* CRUD Section  */}
-				<div>
+				<div className="buttons">
+					{/* Create  */}
 					<button onClick={() => console.log(folder?.id)}>create</button>
+					{/* Delete  */}
+					<button onClick={() => console.log(folder?.label)}>delete</button>
 				</div>
 			</div>
 			{expanded && folder.children && (

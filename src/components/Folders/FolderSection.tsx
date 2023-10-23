@@ -1,8 +1,24 @@
 import "./Folder.css";
 import { Folder } from "../../type/folderType";
 import { FolderNode } from "./folderTree/folderNode";
+import { useQuery } from "react-query";
 
 const FolderSection = () => {
+	// Fetch Data
+	const {
+		isLoading,
+		refetch,
+		data: folderData = [],
+	} = useQuery<Folder[]>("repoData", async () => {
+		const res = await fetch("http://localhost:5000/folders");
+		const jsonData = await res.json();
+		return jsonData as Folder[];
+	});
+
+	refetch();
+
+	if (isLoading) return "Loading...";
+
 	return (
 		<>
 			<div>
@@ -15,42 +31,3 @@ const FolderSection = () => {
 };
 
 export default FolderSection;
-
-// Fake JSON
-const folderData: Folder[] = [
-	{
-		id: "006",
-		label: "Root",
-		children: [
-			{
-				id: "1",
-				label: "Applications",
-				children: [
-					{ id: "2", label: "Calendar" },
-					{ id: "3", label: "Chrome" },
-					{ id: "4", label: "Webstorm" },
-				],
-			},
-			{
-				id: "5",
-				label: "Documents",
-				children: [
-					{
-						id: "6",
-						label: "MUI",
-						children: [
-							{
-								id: "7",
-								label: "src",
-								children: [
-									{ id: "8", label: "index.js" },
-									{ id: "9", label: "tree-view.js" },
-								],
-							},
-						],
-					},
-				],
-			},
-		],
-	},
-];

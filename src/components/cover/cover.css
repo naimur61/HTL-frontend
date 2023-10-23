@@ -6,6 +6,7 @@
 	align-items: end;
 	gap: 1rem;
 	cursor: pointer;
+	width: fit-content;
 }
 .logo-text {
 	color: rgb(12, 94, 246);
