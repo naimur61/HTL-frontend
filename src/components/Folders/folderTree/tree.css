@@ -1,0 +1,36 @@
+.folder-node {
+	margin-left: 20px;
+}
+
+.folder-label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+.folder-icon {
+	margin-right: 5px;
+	width: 10px;
+	height: 10px;
+}
+
+.expanded::before {
+	content: "";
+}
+
+.collapsed::before {
+	content: "";
+}
+
+.folder-children {
+	margin-left: 20px;
+	border-left: 1px solid #ccc;
+	padding-left: 10px;
+}
+
+.display-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

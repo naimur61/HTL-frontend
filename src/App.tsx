@@ -1,6 +1,6 @@
-import FolderSection from "./components/Folders/displayFolder";
 import Cover from "./components/cover/cover";
 import "./App.css";
+import FolderSection from "./components/Folders/FolderSection";
 
 const App = () => {
 	return (
