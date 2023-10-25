@@ -2,6 +2,8 @@ import { FcOpenedFolder } from "react-icons/fc";
 import { FolderNodeProps } from "../../../type/folderType";
 import { useState } from "react";
 import "./tree.css";
+import CreateFolder from "./createFolder";
+import DeleteFolder from "./deleteFolder";
 
 export function FolderNode({ folder }: FolderNodeProps) {
 	const [expanded, setExpanded] = useState(false);
@@ -28,9 +30,9 @@ export function FolderNode({ folder }: FolderNodeProps) {
 				{/* CRUD Section  */}
 				<div className="buttons">
 					{/* Create  */}
-					<button onClick={() => console.log(folder?.id)}>create</button>
+					<CreateFolder id={folder.id} />
 					{/* Delete  */}
-					<button onClick={() => console.log(folder?.label)}>delete</button>
+					<DeleteFolder id={folder.id} />
 				</div>
 			</div>
 			{expanded && folder.children && (
