@@ -1,0 +1,66 @@
+.modal {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(22, 22, 22, 0.603);
+}
+.modal-body {
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	padding: 2rem;
+	border: 1px solid #888;
+	max-width: 400px;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add the box-shadow property here */
+}
+
+.content input {
+	padding: 10px;
+	width: 300px;
+	background-color: rgba(147, 146, 146, 0.22);
+	outline: none;
+	border: none;
+	font-weight: 700;
+	font-size: 1.2em;
+	border-radius: 10px;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.required {
+	color: red;
+	margin-left: 5px;
+	font-size: small;
+}
+
+.buttons {
+	margin-top: 2rem;
+}
+.cancel {
+	border: none;
+	background-color: rgb(246, 47, 47);
+	font-weight: bolder;
+	padding: 10px 15px;
+	border-radius: 10px;
+	color: #fff;
+}
+
+.prosed {
+	border: none;
+	background-color: rgb(6, 239, 6);
+	font-weight: bolder;
+	padding: 10px 15px;
+	border-radius: 10px;
+	color: #fff;
+	margin: 0 7px;
+}

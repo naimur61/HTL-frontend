@@ -7,3 +7,8 @@ export interface Folder {
 export interface FolderNodeProps {
 	folder: Folder;
 }
+
+export type Inputs = {
+	example: string;
+	exampleRequired: string;
+};

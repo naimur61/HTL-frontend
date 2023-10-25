@@ -32,7 +32,7 @@ export function FolderNode({ folder }: FolderNodeProps) {
 					{/* Create  */}
 					<CreateFolder id={folder.id} />
 					{/* Delete  */}
-					<DeleteFolder id={folder.id} />
+					{folder.label !== "Root" && <DeleteFolder id={folder.id} />}
 				</div>
 			</div>
 			{expanded && folder.children && (
