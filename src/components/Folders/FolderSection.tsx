@@ -17,7 +17,7 @@ const FolderSection = () => {
 
 	refetch();
 
-	if (isLoading) return "Loading...";
+	if (isLoading) return <h2 className="loader">Loading...</h2>;
 
 	return (
 		<>
