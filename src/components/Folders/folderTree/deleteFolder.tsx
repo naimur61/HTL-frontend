@@ -1,7 +1,9 @@
-const DeleteFolder = ({ id }: { id: string }) => {
+import { Folder } from "../../../type/folderType";
+
+const DeleteFolder = ({ folder }: { folder: Folder }) => {
 	return (
 		<div>
-			<button onClick={() => console.log(id)}>delete</button>
+			<button onClick={() => console.log(folder)}>delete</button>
 		</div>
 	);
 };

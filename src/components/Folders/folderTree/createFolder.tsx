@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Inputs } from "../../../type/folderType";
+import { Folder, Inputs } from "../../../type/folderType";
 import "./modal.css";
 
-const CreateFolder = ({ id }: { id: string }) => {
-	const [modalStatus, setModalStatus] = useState(true);
+const CreateFolder = ({ folder }: { folder: Folder }) => {
+	console.log(folder);
+	const [modalStatus, setModalStatus] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -26,25 +27,30 @@ const CreateFolder = ({ id }: { id: string }) => {
 	// };
 	return (
 		<div>
-			<button onClick={() => setModalStatus(true)}>create {id}</button>
+			<button className="prosed" onClick={() => setModalStatus(true)}>
+				create
+			</button>
 
 			{modalStatus && (
 				<div className="modal">
 					<div className="modal-body">
-						<form onSubmit={handleSubmit(onSubmit)} className="content">
-							<input {...register("exampleRequired", { required: true })} />
+						<h3>Add folder in "{folder.label}" </h3>
+						<div>
+							<form onSubmit={handleSubmit(onSubmit)} className="content">
+								<input {...register("exampleRequired", { required: true })} />
 
-							{errors.exampleRequired && <span className="required">This field is required</span>}
+								{errors.exampleRequired && <span className="required">This field is required</span>}
 
-							<div className="buttons">
-								<button className="cancel" onClick={() => setModalStatus(false)}>
-									Cancel
-								</button>
-								<button className="prosed" type="submit">
-									Create
-								</button>
-							</div>
-						</form>
+								<div className="buttons">
+									<button className="cancel" onClick={() => setModalStatus(false)}>
+										Cancel
+									</button>
+									<button className="prosed" type="submit">
+										Create
+									</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			)}
