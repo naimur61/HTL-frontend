@@ -2,6 +2,7 @@ export interface Folder {
 	id: string;
 	label: string;
 	children?: Folder[];
+	_id?: string;
 }
 
 export interface FolderNodeProps {
@@ -9,6 +10,5 @@ export interface FolderNodeProps {
 }
 
 export type Inputs = {
-	example: string;
-	exampleRequired: string;
+	label: string;
 };

@@ -10,10 +10,11 @@ const FolderSection = () => {
 		refetch,
 		data: folderData = [],
 	} = useQuery<Folder[]>("repoData", async () => {
-		const res = await fetch("http://localhost:5000/folders");
+		const res = await fetch("https://backend-delta-ruby.vercel.app/folders");
 		const jsonData = await res.json();
 		return jsonData as Folder[];
 	});
+	// console.log(folderData);
 
 	refetch();
 

@@ -29,10 +29,10 @@ export function FolderNode({ folder }: FolderNodeProps) {
 				</div>
 				{/* CRUD Section  */}
 				<div className="buttons">
-					{/* Create  */}
-					<CreateFolder folder={folder} />
 					{/* Delete  */}
 					{folder.label !== "Root" && <DeleteFolder folder={folder} />}
+					{/* Create  */}
+					<CreateFolder folder={folder} />
 				</div>
 			</div>
 			{expanded && folder.children && (
