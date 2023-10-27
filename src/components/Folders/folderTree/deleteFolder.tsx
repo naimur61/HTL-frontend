@@ -12,6 +12,7 @@ const DeleteFolder = ({ folder }: { folder: Folder }) => {
 		})
 			.then((res) => res.json())
 			.then((data) => console.log(data));
+		setModalStatus(false);
 	};
 
 	return (

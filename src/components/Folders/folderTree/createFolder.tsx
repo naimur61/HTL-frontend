@@ -12,14 +12,18 @@ const CreateFolder = ({ folder }: { folder: Folder }) => {
 	} = useForm<Inputs>();
 
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
-		console.log(folder.id);
 		fetch(`https://backend-delta-ruby.vercel.app/folders/${folder.id}`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(data),
 		})
 			.then((res) => res.json())
-			.then((data) => console.log(data));
+			.then((data) => {
+				if (data.acknowledged === true) {
+					alert("Folder Created Successfully!");
+				}
+			});
+		setModalStatus(false);
 	};
 
 	return (
